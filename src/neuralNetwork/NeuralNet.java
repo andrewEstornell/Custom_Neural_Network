@@ -11,6 +11,32 @@ import java.util.Scanner;
  */
 public class NeuralNet {
 
+
+
+
+    /*
+        This neuralnetowrk uses neurons with linear functions and RELU activation, i.e each neuraon N is
+            N = max{ 0, w_1*x_1 + . . .  + w_n*x_n + b}
+        It will have a single output neuron.
+        Since there is only one output neuron the neuralnet works by essentialy saying 'yes' or no' to a given input
+        if the output is 0, we say no, if the output is greater than 0, we say yes.
+
+        To update the weights, we do gradient back propigation.
+        Let O be the output neuron, then each weight is updated via
+
+            w_i += (stepSize)*(error)* dO/dw_i
+
+        Where stepSize is user given value that determines how large of a "step" we take when udpateing the weights
+              error is the value of the decision (not nessisarily an error)
+                    -if the output of the neuralnet was positive when it should have been 0, then the error is -1.
+                    -if the output was psoitive and it should have been positive then error is 1.
+              dO/dw_i  is the deriviative of the output neuron with respect to the weight w_i
+
+
+
+        The model starts with random decision and then as the weights are updated slowly learns "good" decisions.
+     */
+
     private Neuron[][] hiddenLayers;      private int numbOfHiddenLayers;
     private Neuron outputNeuron;          private int numbOfNodesInLayer;
     private Neuron[] inputLayer;

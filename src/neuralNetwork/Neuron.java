@@ -5,8 +5,18 @@ package neuralNetwork;
  */
 public class Neuron {
     /*
-    w_i is weights, I_i is input from the previous layer, c
-    used for N_out = (w_1 * I_1) + . . .  + (w_n * I_i) + w_s    */
+        neurons are a linear function, composed with an activation function
+        i.e, for each neuron in our netwokr, N, we can compute the output of N via
+            N = Max { 0  ,   w_1*x_1 + . . .  + w_n*x_n + b }
+        where, w's are the neurons weights, x's are the input, and b is the bias (just another weight that isnt multiplied by an input)
+
+        The Max{} function just allows us to 'not fire' the nueron if its output is below zero
+        This will cuase neurons with low outputs to have no affect on the neurons in the next layer.
+
+
+        Each neuron will have its weights updated, w_i, via backporpigation
+
+    */
     private double[] weights;
 
     //Derived fields

@@ -24,6 +24,10 @@ public class Main {
                 -sanke will often run into its own tail inorder to get closer to the objective
                 -if the snake is has no possible way to get closer to the objective it will refuse to make moves
                     ** most likely both problems would be solved with more training or a more complex structure.
+
+
+                To see the modle train much faster, increase the step size.
+                This could however, cause the neuralnetwork to "step" past the optimal spot and cuase it it stop learning.
          */
         NeuralNet neuralNetwork = new NeuralNet(0.000001,4, 10, new double[]{ 1, 1, 1, 1, 1});
 
